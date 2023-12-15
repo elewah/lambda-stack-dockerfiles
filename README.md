@@ -32,3 +32,7 @@ run this command from root repo to use your code insde the container
 ```
 docker run -it --gpus 4 --mount type=bind,source="$(pwd)",target=/app  lambda-stack:22.04 
 ```
+command to check GPUs mounted in your machine
+```
+sudo lshw -C display
+```

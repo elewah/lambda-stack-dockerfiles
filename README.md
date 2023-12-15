@@ -28,3 +28,7 @@ Here's a simple PyTorch test to make sure that your GPUs are usable in your dock
 $ sudo docker run --gpus 2 lambda-stack:22.04 python3 -c "import torch; print(torch.cuda.device_count())"
 2
 ```
+run this command from root repo to use your code insde the container
+```
+docker run -it --gpus 4 --mount type=bind,source="$(pwd)",target=/app  lambda-stack:22.04 
+```

@@ -29,11 +29,15 @@ Here's a simple PyTorch test to make sure that your GPUs are usable in your dock
 $ sudo docker run --gpus 2 lambda-stack:22.04 python3 -c "import torch; print(torch.cuda.device_count())"
 2
 ```
-run this command from root repo to use your code insde the container
+Run this command from the root of the repo that  you want to use your code inside the lambda container  with access to 4 GPUs.
 ```
 docker run -it --gpus 4 --mount type=bind,source="$(pwd)",target=/app  lambda-stack:22.04 
 ```
-command to check GPUs mounted in your machine
+Run this command from the root of the repo that  you want to use your code inside the lambda container  with access to all GPUs.
+```
+docker run --gpus all --mount type=bind,source="$(pwd)",target=/app  lambda-stack:22.04 
+```
+Command to check GPUs mounted in your machine.
 ```
 sudo lshw -C display
 ```
